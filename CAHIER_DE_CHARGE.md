@@ -122,8 +122,8 @@ pip install django
 ## 3. Créer un projet Django
 
 ``` bash
-django-admin startproject blog_project
-cd blog_project
+django-admin startproject project_principal
+cd project_principal
 ```
 
 ## 4. Lancer le serveur de développement
@@ -211,7 +211,7 @@ python manage.py createsuperuser
 
 Accéder à l'administration :
 
-    http://127.0.0.1:8000/admin
+    http://127.0.0.1:8000/admin/
 
 ---
 
@@ -325,8 +325,8 @@ Tester également l'interface administrateur.
 
 ---
 # Statut
-- [✔] en cours de developpement
-- [✖] creation du projet
+- ✔ en cours de developpement
+- ✔ creation du projet
 
 ---
 
