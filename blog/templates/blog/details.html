@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+
+<a href="{% url 'accueil' %}" class="btn btn-secondary mb-3">← Retour</a>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <h1>{{ article.title }}</h1>
+
+        <p class="text-muted">
+            {{ article.author.username }} |
+            {{ article.date_of_publish|date:"d M Y H:i" }}
+        </p>
+
+        {% if article.categorie %}
+            <span class="badge bg-primary">
+                {{ article.categorie.name }}
+            </span>
+        {% endif %}
+
+        <hr>
+
+        <p>{{ article.content }}</p>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -17,7 +17,7 @@ class Categorie(models.Model):
 # Initialisation de la class Article
 class Article(models.Model):
     title = models.CharField(max_length=255, verbose_name="Titre")
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="ar", verbose_name="Auteur")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="auteur", verbose_name="Auteur")
     content = models.TextField(verbose_name="Contenu")
     date_of_publish = models.DateTimeField(auto_now_add=True, verbose_name="Date de publication")
     statut = models.BooleanField(default=False, verbose_name="Publié")

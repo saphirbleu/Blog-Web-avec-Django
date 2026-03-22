@@ -1,0 +1,50 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+
+<h1 class="mb-4">Articles récents</h1>
+
+<div class="row">
+
+    {% for article in articles %}
+    <div class="col-md-6 mb-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">{{ article.title }}</h5>
+
+                <h6 class="text-muted">
+                    {{ article.author.username }} | 
+                    {{ article.date_of_publish|date:"d M Y" }}
+                </h6>
+
+                {% if article.categorie %}
+                    <span class="badge bg-primary">
+                        {{ article.categorie.name }}
+                    </span>
+                {% endif %}
+
+                <p class="mt-2">
+                    {{ article.content|truncatechars:400}}
+                </p>
+
+                <a href="{% url 'details' article.id %}" class="btn btn-sm btn-dark">
+                    Lire plus
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+    {% empty %}
+        <p>Aucun article disponible</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
