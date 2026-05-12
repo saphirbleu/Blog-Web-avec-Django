@@ -6,7 +6,7 @@
 
 <a href="{% url 'accueil' %}" class="btn btn-secondary mb-3">← Retour</a>
 
-<div class="card shadow-sm">
+<div class="card">
     <div class="card-body">
 
         <h1>{{ article.title }}</h1>
@@ -16,13 +16,13 @@
             {{ article.date_of_publish|date:"d M Y H:i" }}
         </p>
 
-        {% if article.categorie %}
-            <span class="badge bg-primary">
-                {{ article.categorie.name }}
+        {% if article.category %}
+            <span class="badge">
+                {{ article.category.name }}
             </span>
         {% endif %}
 
-        <hr>
+        <hr style="border: 1px solid #d7ccc8; margin: 20px 0;">
 
         <p>{{ article.content }}</p>
 

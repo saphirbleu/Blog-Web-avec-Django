@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff; /* fond blanc */
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTENEUR FORM */
+.container {
+    width: 350px;
+    margin: 80px auto;
+    background: #ffffff;
+    color: #3e2723; /* marron foncé */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+    border-top: 5px solid #6d4c41; /* touche marron */
+}
+
+h2 {
+    text-align: center;
+    color: #5d4037; /* marron */
+}
+
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #d7ccc8; /* marron clair */
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #6d4c41;
+}
+
+/* BOUTONS */
+button {
+    width: 100%;
+    padding: 10px;
+    background: #6d4c41; /* marron principal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #4e342e; /* marron plus foncé */
+}
+
+/* LIENS */
+a {
+    color: #6d4c41;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* DASHBOARD */
+.dashboard {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* CARTE DASHBOARD */
+.card {
+    background: #ffffff;
+    color: #3e2723;
+    padding: 25px;
+    margin: auto;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+    border-top: 5px solid #6d4c41;
+}
+
+/* MESSAGES */
+p {
+    font-size: 14px;
+}

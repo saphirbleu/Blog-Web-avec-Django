@@ -3,5 +3,53 @@
 {% block title %}Ajouter un article{% endblock %}
 
 {% block content %}
+
+<a href="{% url 'accueil' %}" class="btn btn-secondary mb-3">← Retour</a>
+
 <h1>Ajouter un article</h1>
+
+<!-- Formulaire d'ajout d'article -->
+<div class="card">
+    <div class="card-body">
+        <form method="POST">
+            {% csrf_token %}
+
+            {% if error %}
+                <p style="color: #c62828; background: #ffebee; padding: 10px; border-radius: 5px;">{{ error }}</p>
+            {% endif %}
+            {% if success %}
+                <p style="color: #2e7d32; background: #e8f5e8; padding: 10px; border-radius: 5px;">{{ success }}</p>
+            {% endif %}
+
+            <div>
+                <label for="id_title">Titre :</label>
+                <input type="text" name="title" id="id_title" placeholder="Titre de l'article" value="{{ title|default_if_none:'' }}" required>
+            </div>
+
+            <div>
+                <label for="id_content">Contenu :</label>
+                <textarea name="content" id="id_content" rows="10" placeholder="Contenu de l'article" required>{{ content|default_if_none:'' }}</textarea>
+            </div>
+
+            <div>
+                <label for="id_category">Catégorie :</label>
+                <select name="category" id="id_category">
+                    <option value="">Sélectionner une catégorie</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat.id }}"{% if selected_category == cat.id|stringformat:"s" %} selected{% endif %}>{{ cat.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div>
+                <label for="id_new_category">Nouvelle catégorie :</label>
+                <input type="text" name="new_category" id="id_new_category" placeholder="Nom de la nouvelle catégorie" value="{{ new_category|default_if_none:'' }}">
+                <small>Si vous saisissez une nouvelle catégorie, elle sera créée automatiquement.</small>
+            </div>
+
+            <button type="submit">Publier l'article</button>
+        </form>
+    </div>
+</div>
+
 {% endblock %}

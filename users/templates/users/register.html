@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'users/style.css' %}">
+
+<div class="container">
+    <h2>Inscription</h2>
+
+    {% for message in messages %}
+        <p style="color:red;">{{ message }}</p>
+    {% endfor %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="Prénom">
+        <input type="text" name="last_name" placeholder="Nom">
+        <input type="email" name="email" placeholder="Email">
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Mot de passe">
+        <input type="password" name="password2" placeholder="Confirmer mot de passe">
+
+        <button type="submit">S'inscrire</button>
+    </form>
+
+    <p>Déjà un compte ? <a href="{% url 'login' %}">Se connecter</a></p>
+</div>
